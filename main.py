@@ -1,7 +1,8 @@
 import analyse
 
-datafile = 'x_data.csv'
+datafile = 'tozuka2.csv'
+AnalyzeNumber = 14
 
 # RMS計算
-rms = analyse.RMSfunc(analyse.csv2ndarray(datafile, 3), len(analyse.csv2ndarray(datafile, 3)))
+rms = analyse.RMSfunc(analyse.csv2ndarray(datafile, AnalyzeNumber), len(analyse.csv2ndarray(datafile, AnalyzeNumber)))
 print(rms)
