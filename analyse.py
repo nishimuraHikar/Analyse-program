@@ -1,6 +1,5 @@
 import pandas as pd
 import math
-import matplotlib.pyplot as plt
 
 def csv2ndarray(csv, line_num): #csvと列番号を指定
     # csvからndarray型に変換
@@ -8,6 +7,13 @@ def csv2ndarray(csv, line_num): #csvと列番号を指定
     # csvから読んだデータをnumpyの行列に入れる
     array = csvdata.values
     # 配列の平坦化
+    data = array.T[0]
+    return data
+
+def Meticulous_csv2ndarray(csv, line_num, StartLine, EndLine):
+    csvdata = pd.read_csv(csv, header=0, usecols=[line_num])
+    SpecificLine = csvdata.loc[StartLine:EndLine]
+    array = SpecificLine.values
     data = array.T[0]
     return data
 
